@@ -1,45 +1,45 @@
 # FlowMon
 
-**FlowMon é um editor de workflow visual, construído para a web. Crie, execute e monitore tarefas e scripts de shell em múltiplos dispositivos locais ou remotos com uma interface de arrastar e soltar.**
+**FlowMon is a visual workflow editor, built for the web. Create, run, and monitor tasks and shell scripts on multiple local or remote devices with a drag-and-drop interface.**
 
 [![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=nodedotjs)](https://nodejs.org/)
 [![React Flow](https://img.shields.io/badge/React_Flow-11-orange)](https://reactflow.dev/)
 
-## Sobre o Projeto
+## About the Project
 
-FlowMon transforma a complexidade da automação de sistemas e da criação de scripts em uma experiência visual e interativa. A plataforma permite que usuários, desde administradores de sistemas a desenvolvedores, desenhem fluxos de execução complexos conectando nós funcionais em uma tela. O sistema então gera automaticamente os scripts de shell correspondentes, que podem ser executados e monitorados em tempo real diretamente da interface.
+FlowMon transforms the complexity of system automation and scripting into a visual and interactive experience. The platform allows users, from system administrators to developers, to design complex execution flows by connecting functional nodes on a canvas. The system then automatically generates the corresponding shell scripts, which can be executed and monitored in real-time directly from the interface.
 
-Este projeto foi desenhado para ser uma solução completa, cobrindo desde a autenticação de usuários e gerenciamento de projetos até a execução remota segura via SSH e a visualização de métricas de performance.
+This project was designed to be a complete solution, covering everything from user authentication and project management to secure remote execution via SSH and performance metrics visualization.
 
 ![alt text](image.png)
 
-## Pré-requisitos
+## Prerequisites
 
-- **Sistema Operacional**: Linux (recomendado Ubuntu 24.04.2 LTS ou Linux Mint 22.1)
+- **Operating System:**: Linux (recommended Ubuntu 24.04.2 LTS or Linux Mint 22.1)
 - **Node.js**: v22.17.1
 - **npm**: v11.4.2
 - **Docker**: v28.3.2
 
-## Instalação e Configuração
+## Installation and Configuration
 
-### 1. Clone o repositório
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/eduardolima1994/flow.git
 cd flow
 ```
 
-### 2. Configuração do Backend
+### 2. Backend Configuration
 
-#### Instale as dependências
+#### Install dependencies
 ```bash
 cd backend
 npm i
 ```
 
-#### Configure o arquivo .env
-Crie um arquivo `.env` no diretório `backend` com as seguintes configurações:
+#### Configure the .env file
+Create a `.env` file in the `backend` directory with the following settings:
 
 ```env
 JWT_SECRET=your_secret_key_here
@@ -50,60 +50,60 @@ DB_NAME=flowmon_db
 DB_PORT=5432
 ```
 
-#### Inicialize o banco de dados
+#### Initialize the database
 ```bash
-# Inicie o contêiner PostgreSQL
+# Start the PostgreSQL container
 docker compose up -d db
 
-# Configure o Sequelize (se necessário)
+# Configure Sequelize (if necessary)
 npx sequelize-cli init
 ```
 
-#### Execute o backend
+#### Run the backend
 ```bash
 node server.js
 ```
 
-### 3. Configuração do Frontend
+### 3. Frontend Configuration
 
-#### Instale as dependências
+#### Install dependencies
 ```bash
 cd ../frontend
 npm i
 ```
 
-#### Instalar o serve globalmente
+#### Install serve globally
 ```bash
 npm install -g serve 
 ```
 
-#### Execute o frontend
+#### Run the frontend
 ```bash
 serve -s ./ -p 3000
 ```
 
-## Acesso à Aplicação
+## Accessing the Application
 
-1. Acesse a aplicação em: [http://localhost:5173/](http://localhost:5173/)
-2. Navegue até `/login`
-3. Faça login com um dos usuários padrão:
+1. Access the application at: [http://localhost:3000/](http://localhost:3000/)
+2. Navigate to `/login`
+3. Log in with one of the default users:
 
-| Usuário | Senha |
+| User | Password |
 |---------|-------|
 | `admin` | `admin_password` |
 | `user` | `user_password` |
 
-## Principais Funcionalidades
+## Main Features
 
-- **Editor Visual de Arrastar e Soltar**: Crie workflows complexos de forma intuitiva usando uma vasta biblioteca de nós pré-definidos (`CPU`, `Memória`, `Disco`, `Ping`, `Serviços`, e mais).
-- **Geração de Scripts em Tempo Real**: Converta seus diagramas visuais em scripts de shell (`.sh`) prontos para execução com um único clique.
-- **Execução Remota (SSH)**: Configure e execute tarefas em múltiplos dispositivos remotos de forma segura, com suporte a autenticação por senha.
-- **Terminal e Monitoramento Live**: Acompanhe a saída `stdout`/`stderr` de suas execuções e visualize gráficos de performance (CPU, Memória, etc.) em tempo real.
-- **Gerenciamento de Projetos**: Sistema completo de autenticação de usuários para salvar, carregar, listar e deletar projetos, garantindo que seu trabalho esteja sempre seguro e organizado.
-- **Funcionalidades Avançadas de Workflow**:
-  - **Clonagem de Dispositivos**: Clone um dispositivo e todo o seu fluxo de execução associado.
-  - **Clonagem em Massa**: Importe um arquivo `.csv` para clonar um fluxo para dezenas ou centenas de dispositivos de uma só vez.
-  - **Colapsar/Expandir Fluxos**: Mantenha a tela organizada ocultando partes do fluxo que não estão em foco.
-- **Importação e Exportação**:
-  - **Projetos**: Exporte e importe seus workflows completos no formato `.json` para backup ou compartilhamento.
-  - **Diagramas UML**: Exporte uma representação visual do seu fluxo como uma imagem `.png` usando PlantUML.
+- **Drag-and-Drop Visual Editor**: Create complex workflows intuitively using a vast library of predefined nodes (`CPU`, `Memory`, `Disk`, `Ping`, `Services`, and more).
+- **Real-Time Script Generation**: Convert your visual diagrams into executable shell scripts (`.sh`) with a single click.
+- **Remote Execution (SSH)**: Configure and run tasks on multiple remote devices securely, with password authentication support.
+- **Terminal and Live Monitoring**: Track the `stdout`/`stderr` output of your executions and visualize performance graphs (CPU, Memory, etc.) in real time.
+- **Project Management**: Complete user authentication system to save, load, list, and delete projects, ensuring your work is always secure and organized.
+- **Advanced Workflow Features**:
+  - **Device Cloning**: Clone a device and all its associated execution flow.
+  - **Bulk Cloning**: Import a `.csv` file to clone a flow for dozens or hundreds of devices at once.
+  - **Collapse/Expand Flows**: Keep your screen organized by hiding parts of the flow that are not in focus.
+- **Import and Export**:
+  - **Projects**: Export and import your complete workflows in `.json` format for backup or sharing.
+  - **UML Diagrams**: Export a visual representation of your flow as a `.png` image using PlantUML.
