@@ -26,8 +26,8 @@ This project was designed to be a complete solution, covering everything from us
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/eduardolima1994/flow.git
-cd flow
+git clone https://github.com/eduardolima1994/flowmon.git
+cd flowmon
 ```
 
 ### 2. Backend Configuration
