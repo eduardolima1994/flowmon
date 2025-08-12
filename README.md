@@ -12,7 +12,7 @@ FlowMon transforma a complexidade da automação de sistemas e da criação de s
 
 Este projeto foi desenhado para ser uma solução completa, cobrindo desde a autenticação de usuários e gerenciamento de projetos até a execução remota segura via SSH e a visualização de métricas de performance.
 
-<img width="1596" height="806" alt="image" src="https://github.com/user-attachments/assets/989be006-9cfb-4348-b4ee-08918a5529bc" />
+![alt text](image.png)
 
 ## Pré-requisitos
 
@@ -61,7 +61,7 @@ npx sequelize-cli init
 
 #### Execute o backend
 ```bash
-npm run dev
+node server.js
 ```
 
 ### 3. Configuração do Frontend
@@ -72,9 +72,14 @@ cd ../frontend
 npm i
 ```
 
+#### Instalar o serve globalmente
+```bash
+npm install -g serve 
+```
+
 #### Execute o frontend
 ```bash
-npm run dev
+serve -s ./ -p 3000
 ```
 
 ## Acesso à Aplicação
@@ -87,22 +92,6 @@ npm run dev
 |---------|-------|
 | `admin` | `admin_password` |
 | `user` | `user_password` |
-
-## Configuração Adicional
-
-### Habilitando o Registro de Novos Usuários
-
-Por padrão, a rota de registro (`/register`) requer autenticação no arquivo `server.js`:
-
-```javascript
-app.post("/api/register", authenticateToken, async (req, res) => {...}
-```
-
-Para permitir registro público de novos usuários, remova o middleware `authenticateToken`:
-
-```javascript
-app.post("/api/register", async (req, res) => {...}
-```
 
 ## Principais Funcionalidades
 
