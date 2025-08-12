@@ -16,7 +16,7 @@ This project was designed to be a complete solution, covering everything from us
 
 ## Prerequisites
 
-- **Operating System:**: Linux (recommended Ubuntu 24.04.2 LTS or Linux Mint 22.1)
+- **Operating System**: Linux (recommended Ubuntu 24.04.2 LTS or Linux Mint 22.1)
 - **Node.js**: v22.17.1
 - **npm**: v11.4.2
 - **Docker**: v28.3.2
