@@ -10,9 +10,9 @@
 #define INITIAL_DELAY_SEC       300     
 #define BURST_MB_PER_SECOND     1       
 #define ADD_MIN_MB              0       
-#define ADD_MAX_MB              3  
+#define ADD_MAX_MB              2  
 #define FREE_MIN_MB             0       
-#define FREE_MAX_MB             2      
+#define FREE_MAX_MB             1      
 #define CHUNK_SIZE_KB           1024    
 
 typedef struct MemChunk {
